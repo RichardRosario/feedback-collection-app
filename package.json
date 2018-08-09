@@ -1,7 +1,7 @@
 {
   "name": "topper-node-react-app",
   "version": "1.0.0",
-  "description": "Fullstack react email sender app",
+  "description": "Fullstack React user feedback collection app",
   "main": "index.js",
   "engines": {
     "node": "10.4.1",
