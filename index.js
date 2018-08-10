@@ -1,14 +1,26 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 
 require('./models/User');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI, { autoIndex: false });
-
+mongoose.connect(keys.mongoURI);
 
 const app = express();
+
+//tell express we need cookie for session
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [ keys.cookieKey ]
+  })
+);
+//tell passport to use cookie session
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Google OAuth
 require('./routes/authRoutes')(app);
