@@ -28,14 +28,11 @@ class Header extends Component {
     <nav>
       <div className="nav-wrapper  brown lighten-5">
         <Link 
-          to={this.props.auth ? '/dashboard' : '/' } 
+          to={this.props.auth ? '/surveys' : '/' } 
           className="grey-text text-darken-3 left brand-logo">
           topper
           </Link>
         <ul id="nav-mobile" className="right hide-on-small-and-down">
-          {/* <li><a  className="grey-text text-darken-4" href="/dashboard">Dashboard</a></li>
-          <li><a  className="grey-text text-darken-4" href="/surveys">New Survey</a></li>
-           */}
           {this.renderContent()}
         </ul>
       </div>

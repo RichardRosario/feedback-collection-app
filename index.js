@@ -5,6 +5,7 @@ const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
+require('./models/Survey');
 require('./models/User');
 require('./services/passport');
 
@@ -31,6 +32,8 @@ require('./routes/authRoutes')(app);
 
 //Stripe
 require('./routes/billingRoutes')(app);
+//Survey routes
+require('./routes/surveyRoutes')(app);
 
 //only run in production
 if(process.env.NODE_ENV === 'production') {
