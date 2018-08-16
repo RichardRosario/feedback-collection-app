@@ -14,9 +14,10 @@ class Header extends Component {
         )
       default:
         return [
-          <li key="1"><Payments /></li>,
-          <li key="2" style={{ margin: '0 10px' }} className="grey-text text-darken-4">
+         <li key="1"><Payments /></li>,
+          <li key="2" style={{ margin: '0 5px' }} className="grey-text text-darken-4">
           Credits: {this.props.auth.credits}</li>,
+           <li key="4"><a href="/surveys" className="grey-text text-darken-4">Dashboard</a></li>,
           <li key="3"><a href="api/logout" className="grey-text text-darken-4">LogOut</a></li>
         ]
     }
@@ -25,10 +26,10 @@ class Header extends Component {
   render() {
 
     return (
-    <nav>
-      <div className="nav-wrapper  brown lighten-5">
+    <nav style={{ padding: '0 10px' }} className="nav-wrapper  brown lighten-5">
+      <div >
         <Link 
-          to={this.props.auth ? '/surveys' : '/' } 
+          to={this.props.auth ? '/home' : '/' } 
           className="grey-text text-darken-3 left brand-logo">
           topper
           </Link>

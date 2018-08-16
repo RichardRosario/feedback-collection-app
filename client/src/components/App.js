@@ -5,8 +5,8 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>New Survey</h2>
+import Dashboard from './Dashboard';
+import SurveyNew from './Surveys/SurveyNew';
 
 class App extends Component {
   componentDidMount() {
@@ -19,9 +19,12 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
+            <div className="container">
+            <Route path="/surveys" exact component={Dashboard} />
+            <Route path="/surveys/new" component={SurveyNew} />
             <Route path="/" exact component={Landing} />
-            <Route path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} /> 
+            <Route path="/home" exact component={Landing} />
+            </div> 
           </div>
         </BrowserRouter>
       </div>
