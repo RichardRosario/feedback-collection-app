@@ -5,14 +5,14 @@ module.exports = (survey) => {
     <html>
       <body>
         <div style="text-align: center">
-          <h3> I'd like your input!</h3>
+          <h3> It would mean alot to have your input!</h3>
           <p>Please answwer the following question:</p>
           <p>${survey.body}</p>
           <div>
-            <a href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+            <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
           </div>
           <div>
-            <a href="${keys.redirectDomain}/api/surveys/thanks">No</a>
+            <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
           </div>
         </div>
       </body>

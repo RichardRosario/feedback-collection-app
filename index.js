@@ -4,11 +4,11 @@ const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-
 require('./models/Survey');
 require('./models/User');
 require('./services/passport');
 
+mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
